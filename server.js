@@ -8,12 +8,31 @@ const postRoutes = require('./routes/post.routes');
 require('dotenv').config({ path: './config/.env' })
 require('./config/db');
 const { checkUser, requireAuth } = require('./middleware/auth.middleware');
+const cors = require('cors');
+
 const app = express();
+
+// app.get('/cors', (req, res) => {
+//     res.set('Access-Control-Allow-Origin', '*');
+//     res.send({ "msg": "This has CORS enabled 🎈" })
+// })
+
+const corsOptions = {
+    origin: process.env.CLIENT_URL,
+    credentials: true,
+    'allowedHeaders': ['sessionId', 'Content-Type'],
+    'exposededHeaders': ['sessionId'],
+    'methods': 'GET, HEAD, PATCH, POST, DELETE',
+    'preflightContinue': false
+}
+app.use(cors({ corsOptions }));
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+
 
 // jwt
 app.get('*', checkUser);
