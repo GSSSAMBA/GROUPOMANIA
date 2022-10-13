@@ -53,6 +53,7 @@ module.exports.createPost = async (req, res) => {
         video: req.body.video,
         likers: [],
         comments: [],
+        bio: req.body.bio
     });
 
     try {

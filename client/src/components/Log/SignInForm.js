@@ -25,7 +25,7 @@ const SignInForm = () => {
                     emailError.innerHTML = res.data.errors.email;
                     passwordError.innerHTML = res.data.errors.password;
                 } else {
-                    window.location = "/"; //user connecté redirigé vers accueil
+                    window.location = '/'; //user connecté redirigé vers accueil
                 }
             })
             .catch((err) => {
@@ -36,8 +36,8 @@ const SignInForm = () => {
     return (
         <form action="" onSubmit={handleLogin} id="sign-up-form">
             <br />
-            <h1>Heureux de vous revoir !</h1> <br />
-            <h2>Connectez-vous pour découvrir les derniers posts publiés !</h2> <br />
+            <h1>Groupomania !</h1> <br />
+            <h2>Connectez-vous pour rester à la page !</h2> <br />
             <label htmlFor="email">Email</label>
             <br />
             <input
