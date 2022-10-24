@@ -6,16 +6,27 @@ import { isEmpty } from "./Utils";
 
 const Thread = () => {
     const [loadPost, setLoadPost] = useState(true);
+    const [count, setCount] = useState(5);
     const dispatch = useDispatch();
     const posts = useSelector((state) => state.postReducer);
+
+    const loadMore = () => {
+        if (window.innerHeight + document.documentElement.scrollTop + 1 > document.scrollingElement.scrollHeight) {
+            setLoadPost(true);
+        }
+    }
 
 
     useEffect(() => {
         if (loadPost) {
-            dispatch(getPosts());
-            setLoadPost(false)
+            dispatch(getPosts(count));
+            setLoadPost(false);
+            setCount(count + 5);
         }
-    }, [loadPost, dispatch])
+
+        window.addEventListener('scroll', loadMore);
+        return () => window.removeEventListener('scroll', loadMore);
+    }, [loadPost, dispatch, count]);
 
 
     return (
@@ -23,8 +34,7 @@ const Thread = () => {
             <ul>
                 {!isEmpty(posts[0]) &&
                     posts.map((post) => {
-                        return
-                        <Card post={post} key={post._id} />;
+                        return <Card post={post} key={post._id} />;
                     })}
             </ul>
 

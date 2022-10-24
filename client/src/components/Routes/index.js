@@ -4,6 +4,7 @@ import Home from '../../pages/Home';
 import Profil from '../../pages/Profil';
 import Trending from '../../pages/Trending';
 import Navbar from '../Navbar';
+import Dashboard from '../../pages/Dashboard';
 
 
 const index = () => {
@@ -15,6 +16,8 @@ const index = () => {
                     <Route path="/*" element={<Home />} />
                     <Route path="/profil" element={<Profil />} />
                     <Route path="/trending" element={<Trending />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+
                 </Routes>
             </BrowserRouter>
         </div>

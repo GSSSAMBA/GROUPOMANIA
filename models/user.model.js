@@ -42,7 +42,13 @@ const userSchema = new mongoose.Schema(
         // },
         likes: {
             type: [String]
-        }
+        },
+        role: {
+            type: String,
+            required: true,
+            default: "2023",
+        },
+
     },
     {
         timestamps: true,

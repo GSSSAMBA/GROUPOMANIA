@@ -8,15 +8,18 @@
     font-size: 1.4rem;
     color: $color-3;
   }
+
   .icon {
     margin: 16px auto;
     width: 100%;
     text-align: center;
+
     i {
       font-size: 1.6rem;
       color: $color-3;
     }
   }
+
   ul {
     width: 100%;
     padding: 14px 0 0;
@@ -34,11 +37,13 @@
         object-fit: cover;
         box-shadow: 0 0 2px rgba(51, 51, 51, 0.377);
       }
+
       p {
         text-align: left;
         font-size: 0.9rem;
         font-family: $font-3;
       }
+
       span {
         text-align: right;
 

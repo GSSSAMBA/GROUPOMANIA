@@ -1,0 +1,38 @@
+.top {
+    position: fixed;
+    top: 110px;
+    right: 0px;
+    font-size: xx-large;
+
+    @media screen and (max-width: 590px) {
+        top: initial;
+        bottom: 15px;
+        right: 0px;
+        z-index: 11;
+    }
+}
+
+.home .top {
+    margin: 15px;
+    position: fixed;
+    top: initial;
+    bottom: 30px;
+    right: 0px;
+    z-index: 11;
+
+    @media screen and (max-width: 590px) {
+        top: initial;
+        bottom: 10px;
+        right: 10px;
+        z-index: 11;
+    }
+}
+
+.profil-page .top {
+    @media screen and (max-width: 590px) {
+        top: initial;
+        bottom: 5px;
+        right: 55px;
+        z-index: 11;
+    }
+}

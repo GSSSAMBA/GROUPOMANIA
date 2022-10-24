@@ -27,7 +27,7 @@ module.exports.createPost = async (req, res) => {
             )
                 throw Error("invalid file");
 
-            if (req.file.size > 500000) throw Error("max size");
+            if (req.file.size > 1500000) throw Error("max size");
         } catch (err) {
             const errors = uploadErrors(err);
             return res.status(201).json({ errors });
@@ -85,18 +85,43 @@ module.exports.updatePost = (req, res) => {
 }
 
 
-module.exports.deletePost = (req, res) => {
-    if (!ObjectId.isValid(req.params.id))
-        return res.status(400).send("ID unknown : " + req.params.id);
+// module.exports.deletePost = (req, res, next) => {
+//     if (!ObjectId.isValid({ _id: req.params.id }))
+//         return res.status(400).send("ID unknown : " + req.params.id);
 
-    PostModel.findOneAndRemove(
-        req.params.id,
-        (err, docs) => {
-            if (!err) res.send(docs);
-            else console.log("Delete error : " + err);
+//     PostModel.findOneAndRemove(
+//         { _id: req.params.id },
+//         (err, docs) => {
+//             if (!err) res.send(docs);
+//             else console.log("Delete error : " + err);
+//         });
+
+// }
+exports.deletePost = (req, res, next) => {
+    PostModel.findOne({ _id: req.params.id })
+        .then((post) => {
+            const filename = post.picture.split("uploads/posts/")[1];
+            //[1] pour retirer le  './',
+            console.log("filename", filename);
+            console.log("post", post);
+            console.log("post.picture", post.picture);
+            fs.unlink("client/public/uploads/posts/" + filename, (err) => {
+                console.log("filenamefs", filename);
+                console.log("err", err);
+                //unlink suivi d'un callback car c'est une fonction asynchrone, une fois que la suppression a eu lieu on appelle la methode qui surpprime le post de la database
+                PostModel.deleteOne({ _id: req.params.id })
+                    .then(() => {
+                        res.status(200).json({ message: "Post supprimée !" });
+                    })
+                    .catch((error) => res.status(401).json({ error }));
+            });
+            // }
+        })
+        .catch((error) => {
+            res.status(500).json({ error });
         });
+};
 
-}
 module.exports.likePost = async (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send("ID unknown : " + req.params.id);

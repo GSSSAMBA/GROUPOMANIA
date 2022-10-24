@@ -1,0 +1,89 @@
+.dash {
+    padding-top: 3.8rem;
+    padding-left: 2rem;
+}
+
+.delete_icon {
+    cursor: pointer;
+    width: auto;
+    background-color: red;
+    border: solid black 0.2rem;
+    border-radius: 1rem;
+}
+
+.center_dashboard {
+    text-align: center;
+}
+
+.users_list {
+    &_title {
+        padding: 10px 0;
+    }
+
+    &_container {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+
+    &_card {
+        margin: 30px;
+        width: 500px;
+        display: flex;
+        padding-left: 30px;
+        align-items: center;
+        border: 1px groove $color-1;
+        height: 300px;
+        background: $color-2;
+        border-radius: 20px 20px 6px 20px;
+        box-shadow: 1px 1px 5px 0px $color-3;
+
+        &_pseudoAndImg {
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+        }
+
+        &_pseudo {
+            padding: 20px;
+        }
+
+        &_img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        &_bioAndDelete {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+
+            .delete {
+                justify-content: right;
+
+                &_text {
+                    align-self: center;
+                }
+            }
+        }
+
+        &_bio {
+            flex: 5;
+            align-items: flex-end;
+            justify-content: space-between;
+            overflow-y: auto;
+            margin-top: 40px;
+
+            p {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                padding: 10px;
+                margin-top: 10px;
+            }
+        }
+    }
+}

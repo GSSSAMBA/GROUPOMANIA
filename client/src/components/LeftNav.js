@@ -1,28 +1,95 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+// import React from 'react';
+// import { useSelector } from 'react-redux';
+
+// import { NavLink } from 'react-router-dom';
+
+// const LeftNav = () => {
+//     const userData = useSelector((state) => state.userReducer);
+//     const ADMIN = process.env.REACT_APP_API_ADMIN_ROLE;
+
+
+
+//     return (
+//         <div className='left-nav-container'>
+//             <div className='icons'>
+//                 <div className='icons-bis'>
+//                     <NavLink to='/' activeclassname="active-left-nav">
+//                         <img src="./img/icons/home.svg" alt="home" />
+//                     </NavLink>
+//                     <br />
+//                     <NavLink to='/trending' activeclassname="active-left-nav">
+//                         <img src="./img/icons/rocket.svg" alt="home" />
+//                     </NavLink>
+//                     <br />
+//                     <NavLink to='/profil' activeclassname="active-left-nav">
+//                         <img src="./img/icons/user.svg" alt="home" />
+//                     </NavLink>
+//                     {userData.role === ADMIN && (
+//                         <NavLink to="/dashboard" activeclassname="active-left-nav">
+//                             <br />
+//                             {/* <i className="fa-solid fa-unlock"></i> */}
+//                             {/* <i className="./img/icons/croix.png" ></i> */}
+//                             <br />
+//                         </NavLink>
+//                     )}
+
+//                 </div>
+
+//             </div>
+
+//         </div>
+//     );
+// };
+
+// export default LeftNav;
+
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const LeftNav = () => {
+    const userData = useSelector((state) => state.userReducer);
+
+    const ADMIN = process.env.REACT_APP_API_ADMIN_ROLE;
+
     return (
-        <div className='left-nav-container'>
-            <div className='icons'>
-                <div className='icons-bis'>
-                    <NavLink to='/' activeclassname="active-left-nav">
-                        <img src="./img/icons/home.svg" alt="home" />
+        <div className="left-nav-container">
+            <div className="icons">
+                <div className="icons-bis">
+                    <NavLink to="/" activeclassname="active-left-nav">
+                        <br />
+                        {/* <i className="fas fa-house"></i> */}
+                        <i class="fa-solid fa-landmark"></i>
+                        <br />
+                    </NavLink>
+                    {/* <br />
+                    <NavLink to="/trending" activeclassname="active-left-nav">
+                        <br />
+                        <i className="fas fa-square-poll-vertical"></i>
+                        <br />
+                    </NavLink> */}
+                    <br />
+                    <NavLink to="/trending" activeclassname="active-left-nav">
+                        <br />
+                        {/* <i className="fa-solid fa-heart-circle-check"></i> */}
+                        <i class="fa-solid fa-dragon"></i>
                     </NavLink>
                     <br />
-                    <NavLink to='/trending' activeclassname="active-left-nav">
-                        <img src="./img/icons/rocket.svg" alt="home" />
+                    <NavLink to="/profil" activeclassname="active-left-nav">
+                        <br />
+                        {/* <i className="fa-solid fa-house-user"></i> */}
+                        <i class="fa-sharp fa-solid fa-user"></i>
+                        <br />
                     </NavLink>
-                    <br />
-                    <NavLink to='/profil' activeclassname="active-left-nav">
-                        <img src="./img/icons/user.svg" alt="home" />
-                    </NavLink>
-
-
+                    {userData.role === ADMIN && (
+                        <NavLink to="/dashboard" activeclassname="active-left-nav">
+                            <br />
+                            <i class="fa-solid fa-crosshairs"></i>
+                            <br />
+                        </NavLink>
+                    )}
                 </div>
-
             </div>
-
         </div>
     );
 };
