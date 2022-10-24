@@ -4,14 +4,24 @@
   display: grid;
   grid-template-columns: 60px 1fr 374px;
 
+  .aimé {
+    color: rgb(0, 22, 44);
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    font-size: 30px;
+    ;
+  }
+
   @media screen and (max-width: 990px) {
     grid-template-columns: 60px 1fr;
-    margin: 58px 20px 50px
+    margin: 58px 20px 50px;
   }
 
   @media screen and (max-width: 590px) {
     grid-template-columns: 1fr;
-    margin: 58px 8px 50px;
+    // margin: 58px 8px 50px;
+    margin: 58px 38px 50px
   }
 
   .main {

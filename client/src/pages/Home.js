@@ -10,9 +10,20 @@ import Trends from '../components/Trends';
 
 const Home = () => {
     const uid = useContext(UidContext);
+    console.log("OKOKOKOKOKOKOKOKOK3");
+    console.log(uid);
+
 
     return (
         <div className='home'>
+            {/* {!uid ? (
+                <div className="profil-page">
+                    <div className="log-container">
+                        <Log signin={true} signup={false} />
+                    </div>
+                </div>
+            ) : (
+                <> */}
             <LeftNav />
             <div className='main'>
                 <div className='home-header'>
@@ -20,16 +31,21 @@ const Home = () => {
                 </div>
                 {/* <GoUp /> */}
 
-                <Thread />
+                {/* <Thread /> */}
+                {uid ? <Thread /> : ""}
             </div>
             <div className='right-side'>
                 <div className='right-side-container'>
                     <div className='wrapper'>
-                        <Trends />
+                        {/* <Trends /> */}
+                        {uid ? <Trends /> : ""}
+
                     </div>
                 </div>
             </div>
-        </div>
+            {/* </>) */}
+            {/* } */}
+        </div >
     );
 };
 

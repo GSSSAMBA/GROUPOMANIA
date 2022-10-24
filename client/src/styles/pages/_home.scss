@@ -6,6 +6,10 @@
   margin: 58px auto 50px;
   position: relative;
 
+  // &>.profil-page {
+  //   display: initial;
+  //   max-width: 100%;
+  // }
 
   @media screen and (max-width: 990px) {
     grid-template-columns: 60px 1fr;
@@ -26,6 +30,12 @@
         background: $color-4;
         border-radius: 20px;
         padding: 20px;
+        // margin-top: 6.6rem;
+
+        @media screen and (max-width: 590px) {
+          grid-template-columns: 1fr;
+          margin: 58px 8px 50px;
+        }
 
         ul {
           display: flex;
@@ -90,5 +100,14 @@
       position: fixed;
 
     }
+
   }
+}
+
+.home,
+.trending {
+  // &>.profil-page {
+  //   display: initial;
+  //   max-width: 100%;
+  // }
 }

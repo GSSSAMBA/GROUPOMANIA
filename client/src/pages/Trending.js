@@ -15,6 +15,7 @@ const Trending = () => {
         <div className='trending-page'>
             <LeftNav />
             <div className='main'>
+                <h4 class='aimé'>Les plus aimés</h4>
                 <ul>
                     {!isEmpty(trendList[0]) && trendList.map((post) => <Card post=
                         {post} key={post._id} />)}

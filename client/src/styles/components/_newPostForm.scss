@@ -7,6 +7,18 @@
   // background: $color-4;
   margin-top: 3rem;
 
+  @media screen and (max-width:768px) {
+
+    margin-top: 7.6rem;
+  }
+
+  // .post-container {
+  //   @media screen and (max-width: 760px) {
+  //     margin-top: 7.6rem;
+  //   }
+  // }
+
+
   i {
     font-size: 1.5rem;
     margin: 20px 0;
