@@ -24,7 +24,13 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true,
             max: 1024,
-            minlength: 6
+            minlength: 6,
+            // numeric: 1,
+
+            // uppercase: true,
+            // digits: true
+
+
         },
         picture: {
             type: String,
@@ -55,7 +61,6 @@ const userSchema = new mongoose.Schema(
     }
 );
 
-// play function before save into display: 'block',
 userSchema.pre("save", async function (next) {
     const salt = await bcrypt.genSalt();
     this.password = await bcrypt.hash(this.password, salt);
@@ -67,30 +72,12 @@ userSchema.statics.login = async function (email, password) {
     if (user) {
         const auth = await bcrypt.compare(password, user.password);
         if (auth) {
-            // console.log(user.id);
-            // Le console log ici sert à recueillir l'id du USER
-            //Requete ne fonctionne pas sur POSTMAN mais fonctionne dans la console
-            //Fonctionne pas sur Postman mais fonctionne dans la console
-            //Voir video FROMSCRATCH 2H05
-
             return user;
         }
         throw Error('incorrect password');
     }
     throw Error('incorrect email')
 };
-
-// userSchema.statics.login = async function (email, password) {
-//     const user = await this.findOne({ email });
-//     if (user) {
-//         const auth = await bcrypt.compare(password, user.password);
-//         if (auth) {
-//             return user;
-//         }
-//         throw Error('incorrect password');
-//     }
-//     throw Error('incorrect email')
-// };
 
 const UserModel = mongoose.model("user", userSchema);
 

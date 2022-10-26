@@ -87,7 +87,7 @@ const Trends = () => {
     return (
         <div className="trending-container">
             <h4>Les plus aimés</h4>
-            <NavLink exact to="/trending">
+            <NavLink to="/trending">
                 <ul>
                     {trendList.length &&
                         trendList.map((post) => {

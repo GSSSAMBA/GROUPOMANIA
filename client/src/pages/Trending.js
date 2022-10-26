@@ -9,13 +9,14 @@ import Trends from '../components/Trends';
 
 const Trending = () => {
     const uid = useContext(UidContext);
+    console.log(uid);
     const trendList = useSelector((state) => state.trendingReducer);
 
     return (
         <div className='trending-page'>
             <LeftNav />
             <div className='main'>
-                <h4 class='aimé'>Les plus aimés</h4>
+                <h4 className='aimé'>Les plus aimés</h4>
                 <ul>
                     {!isEmpty(trendList[0]) && trendList.map((post) => <Card post=
                         {post} key={post._id} />)}

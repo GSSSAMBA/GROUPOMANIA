@@ -10,8 +10,8 @@ import Trends from '../components/Trends';
 
 const Home = () => {
     const uid = useContext(UidContext);
-    console.log("OKOKOKOKOKOKOKOKOK3");
-    console.log(uid);
+    // console.log("OKOKOKOKOKOKOKOKOK3");
+    // console.log(uid);
 
 
     return (

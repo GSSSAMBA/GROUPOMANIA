@@ -58,33 +58,25 @@ const LeftNav = () => {
                 <div className="icons-bis">
                     <NavLink to="/" activeclassname="active-left-nav">
                         <br />
-                        {/* <i className="fas fa-house"></i> */}
-                        <i class="fa-solid fa-landmark"></i>
+                        <i className="fa-solid fa-landmark"></i>
+
                         <br />
                     </NavLink>
-                    {/* <br />
-                    <NavLink to="/trending" activeclassname="active-left-nav">
-                        <br />
-                        <i className="fas fa-square-poll-vertical"></i>
-                        <br />
-                    </NavLink> */}
                     <br />
                     <NavLink to="/trending" activeclassname="active-left-nav">
                         <br />
-                        {/* <i className="fa-solid fa-heart-circle-check"></i> */}
-                        <i class="fa-solid fa-dragon"></i>
+                        <i className="fa-solid fa-dragon"></i>
                     </NavLink>
                     <br />
                     <NavLink to="/profil" activeclassname="active-left-nav">
                         <br />
-                        {/* <i className="fa-solid fa-house-user"></i> */}
-                        <i class="fa-sharp fa-solid fa-user"></i>
+                        <i className="fa-sharp fa-solid fa-user"></i>
                         <br />
                     </NavLink>
                     {userData.role === ADMIN && (
                         <NavLink to="/dashboard" activeclassname="active-left-nav">
                             <br />
-                            <i class="fa-solid fa-crosshairs"></i>
+                            <i className="fa-solid fa-crosshairs"></i>
                             <br />
                         </NavLink>
                     )}
