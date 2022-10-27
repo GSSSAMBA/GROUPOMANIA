@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import Log from '../components/Log';
 import { UidContext } from "../components/AppContext";
 import UpdateProfil from '../components/Profil/UpdateProfil';
-// import GoUp from "../components/GoUp";
 
 
 const Profil = () => {
@@ -15,7 +14,6 @@ const Profil = () => {
                 <div id="top">
 
                     <UpdateProfil />
-                    {/* <GoUp /> */}
                 </div>
             ) : (
                 <div className='log-container'>
