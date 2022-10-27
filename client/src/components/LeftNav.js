@@ -65,7 +65,8 @@ const LeftNav = () => {
                     <br />
                     <NavLink to="/trending" activeclassname="active-left-nav">
                         <br />
-                        <i className="fa-solid fa-dragon"></i>
+                        {/* <i className="fa-solid fa-dragon"></i> */}
+                        <i className="fa-sharp fa-solid fa-globe"></i>
                     </NavLink>
                     <br />
                     <NavLink to="/profil" activeclassname="active-left-nav">

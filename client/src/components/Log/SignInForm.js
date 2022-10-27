@@ -6,6 +6,8 @@ const SignInForm = () => {
     const [password, setPassword] = useState("");
 
     const handleLogin = (e) => {
+        // Lorsque l'on soumet un formulaire, par défaut la page se recharge
+        // ici le e.preventDefaul() permet d'annuler se comportement.
         e.preventDefault();
         const emailError = document.querySelector(".email.error");
         const passwordError = document.querySelector(".password.error");

@@ -98,7 +98,7 @@ const SignUpForm = () => {
                     <label htmlFor="password-conf">Confirmer mot de passe</label>
                     <br />
                     <input
-                        type="text"
+                        type="password"
                         name='password'
                         id='password-conf'
                         onChange={(e) => setControlPassword(e.target.value)}
