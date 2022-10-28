@@ -5,11 +5,10 @@ Bienvenue sur Groupomania !
 
 Le projet Groupomania a été réalisé dans le cadre de la formation OpenClassRoom "parcours développeur web".
 
-Pour ce septième et dernier projet du parcours, nous avions à réaliser un réseau social interne pour les employés de la société Groupomania (côté server et côté client).
-
 Vous trouverez la mission du projet dans ce document pdf : https://course.oc-static.com/projects/DWJ_FR_P7/DW+P7+28-09-2022+Sce%CC%81nario.pdf
 
 Quant au cahier des charge, vous le trouverez dans cet autre pdf : https://course.oc-static.com/projects/DWJ_FR_P7/Cahier+des+charges+Groupomania.pdf
+Pour ce  projet , nous avions à réaliser un réseau social interne pour les employés de la société Groupomania (côté back et côté front).
 
 Technologies utilisées :
 NodeJs, React, Express, MongoDB, Sass.
