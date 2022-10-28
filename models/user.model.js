@@ -41,12 +41,7 @@ const userSchema = new mongoose.Schema(
             type: String,
             max: 1024,
         },
-        // followers: {
-        //     type: [String]
-        // },
-        // following: {
-        //     type: [String]
-        // },
+
         likes: {
             type: [String]
         },
@@ -61,6 +56,8 @@ const userSchema = new mongoose.Schema(
         timestamps: true,
     }
 );
+
+//Crypte le mot de passe avant sauvegarde (pre("save"))
 
 userSchema.pre("save", async function (next) {
     const salt = await bcrypt.genSalt();

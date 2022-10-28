@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import LeftNav from '../LeftNav';
 import { useDispatch, useSelector } from "react-redux";
-// import { ErrorResponse } from '@remix-run/router';
 import UploadImg from './UploadImg';
 import { updateBio } from '../../actions/user.actions';
 import { dateParser } from '../Utils';
@@ -11,7 +10,6 @@ const UpdateProfil = () => {
     const [bio, setBio] = useState('')
     const [updateForm, setUpdateForm] = useState(false);
     const userData = useSelector((state) => state.userReducer);
-    // const usersData = useSelector((state) => state.userReducer)
     const error = useSelector((state) => state.errorReducer.userError);
     const dispatch = useDispatch();
 
