@@ -1,7 +1,7 @@
 # GROUPOMANIA
 
 
-Bienvenue sur mon dépôt Groupomania !
+Bienvenue sur Groupomania !
 
 Le projet Groupomania a été réalisé dans le cadre de la formation OpenClassRoom "parcours développeur web".
 
