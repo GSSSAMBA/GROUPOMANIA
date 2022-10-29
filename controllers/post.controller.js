@@ -1,4 +1,3 @@
-// const { findByIdAndUpdate } = require('../models/post.model');
 const PostModel = require('../models/post.model');
 const UserModel = require('../models/user.model');
 const { uploadErrors } = require('../utils/errors.utils');
@@ -85,18 +84,7 @@ module.exports.updatePost = (req, res) => {
 }
 
 
-// module.exports.deletePost = (req, res, next) => {
-//     if (!ObjectId.isValid({ _id: req.params.id }))
-//         return res.status(400).send("ID unknown : " + req.params.id);
 
-//     PostModel.findOneAndRemove(
-//         { _id: req.params.id },
-//         (err, docs) => {
-//             if (!err) res.send(docs);
-//             else console.log("Delete error : " + err);
-//         });
-
-// }
 exports.deletePost = (req, res, next) => {
     PostModel.findOne({ _id: req.params.id })
         .then((post) => {
@@ -168,9 +156,7 @@ module.exports.unlikePost = async (req, res) => {
                 $pull: { likers: req.body.id },
             },
             { new: true },
-            // (err, docs) => {
-            //     if (err) return res.status(400).send(err)
-            // }
+
         ).then((data) => { res.send(data); console.log("data", data); })
             .catch((err) => res.status(500).send({ message: err }));
 
@@ -265,50 +251,6 @@ module.exports.deleteCommentPost = (req, res) => {
         return res.status(400).send(err);
     }
 };
-// module.exports.deleteCommentPost = (req, res) => {
-//     if (!ObjectId.isValid(req.params.id))
-//         return res.status(400).send("ID unknown : " + req.params.id);
 
-//     try {
-//         return PostModel.findByIdAndUpdate(
-//             req.params.id,
-//             {
-//                 $pull: {
-//                     comments: {
-//                         _id: req.body.commentId,
-//                     }
-//                 }
-//             }, console.log("207"),
-//             { new: true },
-//             (err, docs) => {
-//                 if (!err) return res.send(docs);
-//                 else return res.status(400).send(err);
-//             }
-//         );
-//     } catch (err) {
-//         return res.status(400).send(err);
-//     }
-// };
-
-
-
-
-
-
-//         await UserModel.findByIdAndUpdate(
-//             req.body.id,
-//             {
-//                 $addToSet: { likes: req.params.id },
-//             },
-//             { new: true },
-//             (err, docs) => {
-//                 if (!err) res.send(docs);
-//                 else return res.status(400).send(err);
-//             }
-//         )
-//     } catch (err) {
-//         return res.status(400).send(err);
-//     }
-// };
 
 

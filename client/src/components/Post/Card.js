@@ -80,18 +80,6 @@ const Card = ({ post }) => {
                                 </div>
                             </div>
                         )}
-                        {/* </div>
-                            <span>{dateParser(post.createdAt)}</span>
-                        </div>
-                        {isUpdated === false && <p>{post.message}</p>}
-                        {isUpdated && (
-                            <div className='update-post'>
-                                <textarea defaultValue={post.message}
-                                    onChange{(e) => setTextUpdate(e.target.value)} />
-                                <div className='button-container'>
-                                    <button className='btn'>Valider modification</button>
-                                </div>
-                            </div> */}
                         {post.picture && (<img src={post.picture} alt="card-pic" className='card-pic' />
                         )}
                         {post.video && (
@@ -114,10 +102,6 @@ const Card = ({ post }) => {
                             </div>
                         )}
                         <div className='card-footer'>
-                            {/* <div className='comment-icon'>
-                                <img src='./img/icons/message1.svg' alt='comment' />
-                                <span>{post.comments.length}</span>
-                            </div> */}
                             <LikeButton post={post} />
                             <img src='img/icons/share.svg' alt='share' />
                         </div>
