@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/GROUPOMANIA/static/css/main.a38096d1.css",
+    "main.js": "/GROUPOMANIA/static/js/main.d3a938b9.js",
+    "static/media/JosefinSans-ExtraLight.ttf": "/GROUPOMANIA/static/media/JosefinSans-ExtraLight.6173372a87f9785d3540.ttf",
+    "static/media/JosefinSans-Regular.ttf": "/GROUPOMANIA/static/media/JosefinSans-Regular.c2462bfe030916f43ab4.ttf",
+    "static/media/JosefinSans-Bold.ttf": "/GROUPOMANIA/static/media/JosefinSans-Bold.5cc7b0d19c96e8c83733.ttf",
+    "index.html": "/GROUPOMANIA/index.html",
+    "main.a38096d1.css.map": "/GROUPOMANIA/static/css/main.a38096d1.css.map",
+    "main.d3a938b9.js.map": "/GROUPOMANIA/static/js/main.d3a938b9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a38096d1.css",
+    "static/js/main.d3a938b9.js"
+  ]
+}
