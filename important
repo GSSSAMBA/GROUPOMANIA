@@ -1,0 +1,30 @@
+Si il y a des PB au lancement de l'app 
+Pensez à modifier le "null" en chaine de caractère vide '' dans le nodemodule/fs-temp/lib/write-stream-js
+(C'est ce qui permet de upload les images).
+
+Si les images n'aparaissent pas du tout pensez à réinstaller mongoose/redux/redux-toolkit
+
+Si problème de connexion au back bien verifier qu'il y ait un fichier .env dans le dossier config
+
+ce fichier doit contenir ceci (
+PORT=5000
+CLIENT_URL=http://localhost:3000
+DB_USER_PASS=GSSSAMBA:Mongodbb
+TOKEN_SECRET= ---- 
+)
+
+If there are PB at the launch of the app 
+Think to change the "null" in empty string '' in the nodemodule/fs-temp/lib/write-stream-js
+(This is what allows you to upload the images).
+
+If the images do not appear at all think of reinstalling mongoose/redux/redux-toolkit
+
+
+If there is a problem connecting to the back, make sure there is an .env file in the config folder
+
+this file must contain this (
+PORT=5000
+CLIENT_URL=http://localhost:3000
+DB_USER_PASS=GSSSAMBA:Mongodbb
+TOKEN_SECRET= ---- 
+)
